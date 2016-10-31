@@ -1,0 +1,78 @@
+<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				
+				<canvas id="canvas" width="1140" height="400"></canvas>
+
+			</div>
+			<div class="col-md-4" style="margin-top:50px">
+				<div class="form-group">
+					<input 
+						type="number" 
+						id="rect-left"
+						value="{{left}}" 
+						min=0 
+						max={{maxLeft-width}}
+						data-ng-model="left" 
+						data-ng-change="moveRect()">
+					<label for="rect-left">Move left</label>
+				</div>
+				<div class="form-group">
+					<input 
+						type="number" 
+						id="rect-top"
+						value="{{top}}" 
+						min=0 
+						max={{maxTop}}
+						data-ng-model="top" 
+						data-ng-change="moveRect()"/>
+					<label for="rect-top">Move Top</label>
+				</div>
+				<div class="form-group">
+					<input 
+						type="number" 
+						id="rect-width"
+						value="{{width}}" 
+						min=0 						
+						data-ng-model="width" 
+						data-ng-change="moveRect()"/>
+					<label for="rect-width">Width</label>
+				</div>
+
+				<div class="form-group">
+					<input 
+						type="number" 
+						id="rect-height"
+						value="{{height}}" 
+						min=0 						
+						data-ng-model="height" 
+						data-ng-change="moveRect()">
+					<label for="rect-height">Height</label>
+				</div>
+			</div>
+			<div class="col-md-4" style="margin-top:50px">
+				<div class="form-group">					
+					<input 
+						type="button" 
+						class="btn" 
+						value="Append SVG" 
+						id="new-element"											 
+						data-ng-click="newElement()">
+
+					<button 
+						type="button" 
+						class="btn mt2" 
+						data-ng-click="newImage()">
+						Append IMG
+					</button>
+
+					<button 
+						type="button" 
+						class="btn mt2" 
+						data-ng-click="animRect()">
+						Anim Rect
+					</button>					
+				</div>				
+			</div>
+		</div>
+	</div>	
