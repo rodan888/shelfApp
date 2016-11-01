@@ -4,9 +4,9 @@ angular.module('fabricApp', ['ngRoute'])
 			.when('/', {
 				templateUrl: 'components/templates/home.html',
 				controller: 'homeCtrl'				
-			}).when('/page-two', {
-				templateUrl: 'components/templates/page2.html',
-				controller: 'homeCtrl'				
+			}).when('/new-area', {
+				templateUrl: 'components/templates/new-area.html',
+				controller: 'newareaCtrl'				
 			})
 			.otherwise({
 				redirectTo: '/'

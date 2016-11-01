@@ -15,9 +15,50 @@
 
 			c.add(rect);
 
-			rect.on('selected', function(){
-				$window.location.href = "#/page-two";
-			});
+			// rect.on('selected', function(){
+			// 	$window.location.href = "#/page-two";
+			// });
+
+			var data = [{
+				"id":"_1",
+				"x": "100",
+				"y": "100",
+				"width": "100",
+				"height": "100"
+			},{
+				"id":"_2",
+				"x": "200",
+				"y": "100",
+				"width": "100",
+				"height": "100"
+			},{
+				"id":"_3",
+				"x": "300",
+				"y": "100",
+				"width": "100",
+				"height": "100"
+			},{
+				"id":"_4",
+				"x": "400",
+				"y": "100",
+				"width": "100",
+				"height": "100"
+			}];
+
+			$scope.drawCanvas = function(){				
+				var area;
+				for(var i = 0; i < data.length; i++){
+					area = new fabric.Rect({
+						width: parseInt(data[i].width),
+						height: parseInt(data[i].height),
+						top: parseInt(data[i].y),
+						left: parseInt(data[i].x),
+						fill: '#999'
+					});					
+					c.add(area);
+				};
+				console.log(c);
+			};
 
 			$scope.left = rect.get('left');
 			$scope.top = rect.get('top');
@@ -61,9 +102,7 @@
 						$scope.left -= 3;
 					}else{
 						$scope.left += 3;						
-					}
-					console.log($scope.maxLeft);
-					console.log($scope.left);
+					}				
 					$scope.moveRect();					
 				};
 

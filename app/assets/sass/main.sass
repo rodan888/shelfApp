@@ -349,60 +349,9 @@ header
 					color: $main
 // Pagination end------------------------------
 
+canvas
+	border: 1px solid $gray	
 
-
-.add-page-wrap
-	height: 385px
-	position: relative
-	button
-		position: absolute
-		width: 180px
-		height: 210px
-		top: 50%
-		left: 50%
-		font-size: 32px
-		color: $main		
-		line-height: 210px
-		background-color: $white
-		border: 2px solid $main
-		@include border-radius(3px)
-		@include transform(translate(-50%,-50%))
-.block
-	min-height: 300px
-	position: relative
-.content-block
-	position: absolute
-	max-width: 600px	
-	position: absolute
-	top: 50%
-	left: 50%
-	@include transform(translateX(-50%) translateY(-50%))
-
-
-
-
-
-
-.slider
-	margin-top: 40px
-	.item
-		img
-			width: 100%
-	.owl-controls
-		.owl-buttons
-			width: 100%
-			position: absolute
-			height: 40px
-			top: 50%
-			margin-top: -20px
-			.owl-prev
-				position: absolute
-				left: 0
-				top: 0
-			.owl-next
-				position: absolute
-				right: 0
-				top: 0
 
 
 
@@ -443,42 +392,6 @@ footer
 			padding-top: 5px
 			span 
 				display: block
-
-//Customers table
-.customer,.product,.invoice
-	margin-bottom: 2px
-	@include transition(box-shadow 0.2s)
-	&:hover
-		box-shadow: 0 0 3px $black		
-	&:nth-child(odd)
-		background-color: $grayLight
-	&:nth-child(even)
-		background-color: $white
-	h4
-		text-transform: lowercase
-		line-height: 50px
-		margin-bottom: 0
-	span
-		display: block
-		font-size: 12px
-		i
-			margin-right: 5px
-			font-size: 14px
-	.col-md-4
-		padding-top: 7px
-	.col-md-1
-		text-align: right
-		.btn
-			min-width: 30px
-			line-height: 25px
-			height: 30px
-			margin-top: 10px
-	form.full
-		box-shadow: none
-		margin: 0 -15px
-	input[type="number"]
-		width: 50px
-		background-color: transparent
 
 
 //ALWAYS END
