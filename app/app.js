@@ -10,5 +10,5 @@ angular.module('fabricApp', ['ngRoute'])
 			})
 			.otherwise({
 				redirectTo: '/'
-			});
+			})      
 		}]);

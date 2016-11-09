@@ -5,8 +5,86 @@
 				<canvas id="canvas" width="1140" height="400"></canvas>
 
 			</div>
-			<div class="col-md-4" style="margin-top:50px">
-				<div class="form-group">
+			<div class="col-md-12">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6">
+							<h1 class="title mt2">Количество полок: {{chelfCount}}</h1>
+						</div>
+						<div class="col-md-6">
+							<button type="button"
+								data-ng-hide="createBlock"
+								data-ng-click="createBlock =! createBlock"							
+								class="btn mt2">
+								Создать полку
+							</button>				
+						</div>
+					</div>
+				</div>
+
+				<div class="container-fluid">
+					<div class="row">
+
+
+						<div class="col-md-4" data-ng-show="createBlock">							 
+							<div class="form-group">
+								<input 
+									type="number" 
+									id="shelf-height"							
+									min=1
+									max={{maxHeight()}}									 
+									data-ng-model="shelf.height">
+									<label for="shelf-height">Высота</label>
+								</div>
+								<div class="form-group">
+								<input 
+									type="number" 
+									id="shelf-position"
+									value="{{shelf.x}}" 
+									min=1 
+									data-ng-model="shelf.x">
+									<label for="shelf-position">Позиция</label>
+								</div>
+								<button type="button" 								
+									class="btn" 
+									data-ng-click="addShelf(shelf);shelf =! shelf;createBlock =! createBlock">
+									Добавить полку
+								</button>
+							</div>
+						
+							<div class="col-md-4" data-ng-show="editBlock">
+								<div class="form-group">
+								<input 
+									type="number" 
+									id="shelf-height"
+									value="{{heightShelf}}" 
+									min=30 
+									max={{maxHeight()}}
+									data-ng-change="changePosition()"
+									data-ng-model="heightShelf">
+									<label for="shelf-height">Высота</label>
+								</div>
+								<div class="form-group">
+								<input 
+									type="number" 
+									id="shelf-position"
+									value="{{position}}" 
+									min=1
+									data-ng-change="changePosition()"
+									data-ng-model="position">
+									<label for="shelf-position">Позиция</label>
+								</div>
+								<button type="button" 								
+									class="btn" 
+									data-ng-click="removeShelf()">
+									Удалить полку || {{maxHeight()}}
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- <div class="col-md-4" style="margin-top:50px"> -->
+	<!-- 			<div class="form-group">
 					<input 
 						type="number" 
 						id="rect-left"
@@ -71,7 +149,9 @@
 						class="btn mt2" 
 						data-ng-click="animRect()">
 						Anim Rect
-					</button>					
+					</button>		 -->
+
+				
 				</div>				
 			</div>
 		</div>
